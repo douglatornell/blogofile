@@ -31,16 +31,9 @@ install_requires = [
     'pytz',
     'PyYAML',
     'six',
+    'textile',
     'Unidecode',
 ]
-dependency_links = []
-if PY3:
-    install_requires.append('textile==2.1.4-py3k')
-    dependency_links = [
-        'http://github.com/EnigmaCurry/textile-py3k/tarball/2.1.4'
-        '#egg=textile-2.1.4-py3k']
-else:
-    install_requires.append('textile')
 if PY26:
     install_requires.append('argparse')
 
@@ -67,7 +60,6 @@ setup(
     classifiers=classifiers,
     packages=["blogofile"],
     install_requires=install_requires,
-    dependency_links=dependency_links,
     zip_safe=False,
     entry_points={
         'console_scripts': ['blogofile = blogofile.main:main']},
